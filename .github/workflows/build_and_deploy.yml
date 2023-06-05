@@ -18,11 +18,11 @@ jobs:
           yarn
           CI=false yarn build
           cd ..
-          cp -r wolves_app/build docs/
+          cp -r wolves_app/build docs-build/
       - name: copy catalogue metadata
         run: |
-          cp mc_meta.json docs/mc_meta.json
-          cp -r assets docs/assets
+          cp mc_meta.json docs-build/mc_meta.json
+          cp -r assets docs-build/assets
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
