@@ -14,7 +14,7 @@
         "category": "",
         "type": "application",
         "components": [],
-        "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/Wolves_App_thumbnail.png",
+        "thumbnail": "https://mapcomponents.github.io/european_wolves_app/assets/assets/thumbnails/Wolves_App_thumbnail.png",
         "demos": [
            {
               "name": "dashboard",
