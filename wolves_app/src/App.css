@@ -47,8 +47,13 @@
 
 .css-lqmd35 .MuiDrawer-paper {
    background-color: #009ee0;
-   opacity: 0.5;
+   opacity: 0.85;
    bottom: 10px;
+}
+
+.css-11pvf4g {
+   background-color: #009ee0;
+   opacity: 0.5;
 }
 
 
