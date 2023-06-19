@@ -1,63 +1,61 @@
-
-
 #root {
-  background-color: #000;
-  position: absolute;
-  min-height: 400px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+   background-color: #000;
+   position: absolute;
+   min-height: 400px;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
 }
 
 .App {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
 }
 .mapContainer {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
+   position: absolute;
+   height: 100vh;
+   width: 100vw;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: 100;
 }
 
 .image-overlay-new {
-  position: absolute;
-  bottom: 16px;
-  left: 20px;
-  z-index: 101;
-} 
+   position: absolute;
+   bottom: 16px;
+   left: 20px;
+   z-index: 101;
+}
 
 .numbersProvider {
-  position: absolute;
-  top: 16px;
-  right: 60px;
-  z-index: 101;
+   position: absolute;
+   top: 16px;
+   right: 60px;
+   z-index: 101;
 }
 
 .css-u5layt-MuiDrawer-docked .MuiDrawer-paper {
-  background-color: #009ee0;
-  margin-bottom: 1.5%;
+   background-color: #009ee0;
+   margin-bottom: 1.5%;
+}
+
+.css-lqmd35 .MuiDrawer-paper {
+   background-color: #009ee0;
+   opacity: 0.5;
+   bottom: 10px;
 }
 
 
-.css-17tsei6-MuiDrawer-docked .MuiDrawer-paper {
-  background-color: #009ee0;
-  opacity: 0.5;
-  bottom:10px;
+.Info1 {
+   z-index: 101;
 }
 
-.Info1{
-  z-index: 101;
+.Info2 {
+   color: #111;
 }
-
-.Info2{
-  color:
-  #111;}
