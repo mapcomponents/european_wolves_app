@@ -16,8 +16,7 @@ jobs:
           mkdir docs-build || true
           yarn
           CI=false yarn build
-          cd ..
-          cp -r build/* docs-build/
+          cp -r docs-build/
       - name: copy catalogue metadata
         run: |
           cp mc_meta.json docs-build/mc_meta.json
