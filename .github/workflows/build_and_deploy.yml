@@ -14,10 +14,8 @@ jobs:
       - name: Install and build 🔧
         run: | # Install packages and build the static files
           mkdir docs-build || true
-          cd wolves_app
           yarn
           CI=false yarn build
-          cp -r wolves_app/build/* docs-build/
           cp -r build/* docs-build/
       - name: copy catalogue metadata
         run: |
