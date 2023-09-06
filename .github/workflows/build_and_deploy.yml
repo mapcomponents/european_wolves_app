@@ -17,7 +17,6 @@ jobs:
           cd wolves_app
           yarn
           CI=false yarn build
-          cd ..
           cp -r wolves_app/build/* docs-build/
           cp -r build/* docs-build/
       - name: copy catalogue metadata
