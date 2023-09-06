@@ -17,7 +17,7 @@ import { getTheme } from "@mapcomponents/react-maplibre";
 const theme = createTheme(getTheme("light"), {
    palette: {
       primary: { main: "#353535" },
-      secondary: { main: "#fafbfc" },
+      secondary: { main: "#009ee0" },
    },
    components: {
       MuiDrawer: {
@@ -25,8 +25,8 @@ const theme = createTheme(getTheme("light"), {
             PaperProps: {
                sx: {
                   marginBottom: "1.5%",
-                  backgroundColor: "#353535",
-                  color: "white",
+                  backgroundColor: "#009ee0",
+                  color: "black",
                },
             },
          },

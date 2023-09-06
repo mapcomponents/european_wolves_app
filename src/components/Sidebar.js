@@ -135,6 +135,8 @@ export default function Sidebar(props) {
                   marginBottom: 5,
                   left: mediaIsMobile ? 38 : 5,
                   bottom: mediaIsMobile ? 64 : 5,
+                  backgroundColor: "#353535",
+                  color: "white",
                },
             }}
             variant="persistent"
