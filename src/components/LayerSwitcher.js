@@ -14,7 +14,7 @@ const styleOptions = [
 
 export default function LayerSwitcher() {
    const mapHook = useMap({ mapId: "map_1" });
-   const [currentIndex, setCurrentIndex] = useState(1);
+   const [currentIndex, setCurrentIndex] = useState(0);
    const [disableWms, setDisableWms] = useState(false);
    const [mapReady, setMapReady] = useState(false);
 
@@ -40,6 +40,7 @@ export default function LayerSwitcher() {
          setDisableWms(false);
       }
    };
+
 
    return (
       <>
