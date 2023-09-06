@@ -1,74 +1,55 @@
-import { MlWmsLayer } from "@mapcomponents/react-maplibre";
-import React, { useState } from "react";
-import { Button, Box, useMediaQuery } from "@mui/material/";
-import terrainpic from "../assets/terrainpic.png";
+import { useMap } from "@mapcomponents/react-maplibre";
+import React, { useState, useEffect } from "react";
+import WmsCarousel from "./carousel";
+import DataLayer from "./dataLayer";
+import OSM_Bright from "../assets/OSM_Bright.json";
+import OSM_Brightpic from "../assets/OSM_Brightpic.png";
+import OSM_Fiord from "../assets/OSM_Fiord.json";
+import OSM_Fiordpic from "../assets/OSM_Fiordpic.png";
+
+const styleOptions = [
+   { style: OSM_Fiord, image: OSM_Brightpic, title: "Fiord" },
+   { style: OSM_Bright, image: OSM_Fiordpic, title: "Bright" },
+];
 
 export default function LayerSwitcher() {
-   const [showWMS, setShowWMS] = useState(false);
-   const mediaIsMobile = useMediaQuery("(max-width:900px)");
-   const mediaIsSmallScreen = useMediaQuery("(max-width:1450px)");
+   const mapHook = useMap({ mapId: "map_1" });
+   const [currentIndex, setCurrentIndex] = useState(1);
+   const [disableWms, setDisableWms] = useState(false);
+   const [mapReady, setMapReady] = useState(false);
 
-   function opacitySetter() {
-      if (showWMS === true) {
-         return 0.5;
+   useEffect(() => {
+      styleOptions[currentIndex].style.layers.forEach((el) => {
+         if (mapHook.map?.map.getLayer(el.id)) {
+            mapHook.map?.removeLayer(el.id);
+         }
+         mapHook.map?.addLayer(el, "Wolf_map");
+         setMapReady(true);
+      });
+   }, [currentIndex, mapHook.map]);
+
+   const wmsSetter = (index) => {
+      if (index === currentIndex) {
+         if (disableWms) {
+            setDisableWms(false);
+         } else {
+            setDisableWms(true);
+         }
       } else {
-         return 1.0;
+         setCurrentIndex(index);
+         setDisableWms(false);
       }
-   }
+   };
 
    return (
       <>
-         <Box
-            sx={
-               mediaIsMobile
-                  ? {
-                       position: "fixed",
-                       bottom: 35,
-                       left: 5,
-                       height: 60,
-                       width: 60,
-                       opacity: 1.0,
-                       zIndex: 110,
-                       display: "flex",
-                       border: 3,
-                       borderColor: "#000",
-                       justifyContent: "center",
-                    }
-                  : {
-                       position: "fixed",
-                       bottom: mediaIsSmallScreen ? 40 : 60,
-                       right: mediaIsSmallScreen ? 60 : 90,
-                       height: 84,
-                       width: 84,
-                       opacity: 1.0,
-                       zIndex: 110,
-                       display: "flex",
-                       border: 3,
-                       borderColor: "#000",
-                       justifyContent: "center",
-                    }
-            }
-         >
-            <Button
-               onClick={() => {
-                  setShowWMS(!showWMS);
-               }}
-               sx={{ display: "flex", alignItems: "stretch", padding: 0 }}
-            >
-               <img
-                  src={terrainpic}
-                  alt="terrainImage"
-                  style={{ opacity: opacitySetter() }}
-               />
-            </Button>
-         </Box>
-
-         {showWMS && (
-            <MlWmsLayer
-               url="https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg"
-               insertBeforeLayer="Wolf_map"
-            />
-         )}
+         {!disableWms}
+         <DataLayer ready={mapReady} />
+         <WmsCarousel
+            options={styleOptions}
+            setter={wmsSetter}
+            current={currentIndex}
+         />
       </>
    );
 }

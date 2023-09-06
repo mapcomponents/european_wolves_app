@@ -133,7 +133,8 @@ export default function Sidebar(props) {
                   opacity: 0.75,
                   marginTop: 2,
                   marginBottom: 5,
-                  left: mediaIsMobile ? 144 : 5,
+                  left: mediaIsMobile ? 38 : 5,
+                  bottom: mediaIsMobile ? 64 : 5,
                },
             }}
             variant="persistent"
