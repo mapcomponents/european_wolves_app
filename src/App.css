@@ -42,7 +42,7 @@
   z-index: 101;
 }
 
-.css-u5layt-MuiDrawer-docked .MuiDrawer-paper {
+.css-lqmd35-MuiDrawer-docked .MuiDrawer-paper {
   background-color: #009ee0;
   margin-bottom: 1.5%;
 }
@@ -53,6 +53,7 @@
   opacity: 0.5;
   bottom:10px;
 }
+
 
 .Info1{
   z-index: 101;
