@@ -46,7 +46,7 @@ const imageStyle = {
 function App() {
    const mediaIsMobile = useMediaQuery("(max-width:900px)");
    const mediaIsSmallScreen = useMediaQuery("(max-width:1750px)");
-   const [open, setOpen] = useState(false);
+   const [open, setOpen] = useState(true);
 
    function toolTipSetter() {
       if (open === true) {
@@ -92,8 +92,14 @@ function App() {
                />
             )}
 
-            <LayerSwitcher />
-            <Tooltip title={toolTipSetter()}>
+            <Tooltip title="Light/Dark Map" followCursor={true} placement="top">
+               <LayerSwitcher />
+            </Tooltip>
+            <Tooltip
+               title={toolTipSetter()}
+               followCursor={true}
+               placement="top"
+            >
                <IconButton
                   className="Info1"
                   sx={
