@@ -2,7 +2,7 @@
   {
      "european_wolves": {
         "name": "european_wolves",
-        "title": "Wolf App",
+        "title": "Wolves in Europe",
         "description": "Heatmap Application that shows the distribution of wolves from 2012-2022",
         "i18n": {
            "de": {
